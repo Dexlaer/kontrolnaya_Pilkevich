@@ -19,28 +19,41 @@ class Program
 {
     static void Main()
     {
-        string[] sourceArray = {"Hello", "2", "world", ":-)", "123", "1567", "-2", "computer science", "Russia", "Denmark", "Kazan"};
+        // Инициализация исходного массива строк
+        string[] sourceArray = { "Hello", "2", "world", ":-)", "123", "1567", "-2", "computer science", "Russia", "Denmark", "Kazan" };
+
+        // Переменная для подсчёта количества строк, удовлетворяющих условию (длина <= 3 символа)
         int validCount = 0;
+
+        // Первый цикл для подсчёта строк с длиной 3 или меньше символов
         foreach (string str in sourceArray)
         {
-            if (str.Length <= 3)
+            if (str.Length <= 3) // Проверка условия
             {
-                validCount++;
+                validCount++; // Увеличение счётчика, если строка удовлетворяет условию
             }
         }
+
+        // Создание результирующего массива строк нужного размера
         string[] resultArray = new string[validCount];
+
+        // Индекс для добавления элементов в результирующий массив
         int index = 0;
+
+        // Второй цикл для заполнения результирующего массива подходящими строками
         foreach (string str in sourceArray)
         {
-            if (str.Length <= 3)
+            if (str.Length <= 3) // Проверка того же условия
             {
-                resultArray[index++] = str;
+                resultArray[index++] = str; // Добавление строки в массив и инкремент индекса
             }
         }
+
+        // Вывод результирующего массива
         Console.WriteLine("Filtered array:");
         foreach (string item in resultArray)
         {
-            Console.WriteLine(item);
+            Console.WriteLine(item); // Вывод каждого элемента массива
         }
     }
 }
